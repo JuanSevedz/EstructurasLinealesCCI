@@ -11,7 +11,7 @@
 
 ## UML
 
-![UML](docs/Taller2CCI.jpg.jpg)
+![UML](docs/Taller2CCI.jpg)
 
 ***
 
