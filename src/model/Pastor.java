@@ -15,11 +15,11 @@ public class Pastor {
     
     /**
      * Constructor para crear un nuevo pastor
-     * @param id identificador único del pastor
-     * @param nombre nombre del pastor
-     * @param doblones cantidad inicial de doblones
-     * @param feligreses cantidad inicial de feligreses
-     * @param trato tipo de negocio o oficio del pastor
+     * id identificador único del pastor
+     * nombre nombre del pastor
+     * doblones cantidad inicial de doblones
+     * feligreses cantidad inicial de feligreses
+     * trato tipo de negocio o oficio del pastor
      */
     public Pastor(int id, String nombre, int doblones, int feligreses, String trato) {
         this.id = id;
@@ -71,7 +71,7 @@ public class Pastor {
     /**
      * Traspasa todos los recursos de este pastor a otro
      * "traspasándole su gente y su tesoro"
-     * @param destino el pastor que recibirá los recursos
+     * destino el pastor que recibirá los recursos
      */
     public void traspasarRecursos(Pastor destino) {
         if (destino != null) {
@@ -85,8 +85,8 @@ public class Pastor {
     /**
      * Recibe la mitad de los recursos especificados
      * "dándole la mitad cabal de sus fieles y de su riqueza"
-     * @param doblones cantidad de doblones a recibir la mitad
-     * @param feligreses cantidad de feligreses a recibir la mitad
+     * doblones cantidad de doblones a recibir la mitad
+     * feligreses cantidad de feligreses a recibir la mitad
      */
     public void recibirMitad(int doblones, int feligreses) {
         this.doblones += doblones / 2;
@@ -95,9 +95,9 @@ public class Pastor {
     
     /**
      * Transfiere una cantidad específica de recursos a otro pastor
-     * @param destino pastor que recibirá los recursos
-     * @param doblones cantidad de doblones a transferir
-     * @param feligreses cantidad de feligreses a transferir
+     * destino pastor que recibirá los recursos
+     * doblones cantidad de doblones a transferir
+     * feligreses cantidad de feligreses a transferir
      */
     public void transferirRecursos(Pastor destino, int doblones, int feligreses) {
         if (destino != null && this.doblones >= doblones && this.feligreses >= feligreses) {
@@ -110,7 +110,7 @@ public class Pastor {
     
     /**
      * Verifica si este pastor es más rico que otro
-     * @param otro el pastor a comparar
+     * otro el pastor a comparar
      * @return true si este pastor tiene más doblones
      */
     public boolean esMasRico(Pastor otro) {
@@ -119,7 +119,7 @@ public class Pastor {
     
     /**
      * Verifica si este pastor es más pobre que otro
-     * @param otro el pastor a comparar
+     * otro el pastor a comparar
      * @return true si este pastor tiene menos doblones
      */
     public boolean esMasPobre(Pastor otro) {
@@ -129,7 +129,7 @@ public class Pastor {
     /**
      * Verifica si este pastor tiene menos feligreses que otro
      * "eligiendo al de menor grey"
-     * @param otro el pastor a comparar
+     * otro el pastor a comparar
      * @return true si este pastor tiene menos feligreses
      */
     public boolean tieneMenosFeligreses(Pastor otro) {
@@ -139,7 +139,7 @@ public class Pastor {
     /**
      * Verifica si este pastor es del mismo trato que otro
      * "compañero del mesmo trato o negocio"
-     * @param otro el pastor a comparar
+     * otro el pastor a comparar
      * @return true si ambos pastores tienen el mismo trato
      */
     public boolean esDelMismoTrato(Pastor otro) {
@@ -149,7 +149,7 @@ public class Pastor {
     /**
      * Aplica el "hurto piadoso" - roba la tercia parte de los recursos del más rico
      * "llevarse de ella la tercia parte, tanto en ovejas como en moneda"
-     * @param victima el pastor más rico del que se robará
+     * victima el pastor más rico del que se robará
      * @return true si el hurto se realizó exitosamente
      */
     public boolean aplicarHurtoPiadoso(Pastor victima) {

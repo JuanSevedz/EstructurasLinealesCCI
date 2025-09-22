@@ -13,19 +13,33 @@ public class Mesa {
     
     /**
      * Constructor de la mesa redonda
-     * @param numPastores número inicial de pastores
-     * @param n número de posiciones a contar en cada eliminación
+     * numPastores número inicial de pastores
+     * n número de posiciones a contar en cada eliminación
      */
     public Mesa(int numPastores, int n) {
         this.pastores = new ArrayList<>(numPastores);
         this.posicionActual = 0;
         this.n = n;
+        
+        // Crear los pastores automáticamente
+        String[] tratos = {"Mercader", "Artesano", "Labrador", "Escribano", "Barbero", 
+                          "Sastre", "Herrero", "Carpintero", "Panadero", "Tabernero"};
+        
+        for (int i = 0; i < numPastores; i++) {
+            String nombre = "Pastor " + (i + 1);
+            int doblones = 100 + (i * 10); // Recursos variados
+            int feligreses = 50 + (i * 5);
+            String trato = tratos[i % tratos.length];
+            
+            Pastor pastor = new Pastor(i + 1, nombre, doblones, feligreses, trato);
+            sentarPastor(pastor);
+        }
     }
     
     /**
      * Sienta un pastor en la mesa
      * "siéntanse, por ventura y a la buena de Dios, varios pastores"
-     * @param pastor el pastor a sentar en la mesa
+     * pastor el pastor a sentar en la mesa
      */
     public void sentarPastor(Pastor pastor) {
         if (pastor != null) {
@@ -37,7 +51,7 @@ public class Mesa {
     /**
      * Saca un pastor de la mesa en una posición específica
      * "darle pasaporte de la rueda"
-     * @param posicion la posición del pastor a sacar
+     * posicion la posición del pastor a sacar
      * @return el pastor eliminado, o null si la posición es inválida
      */
     public Pastor sacarPastor(int posicion) {
@@ -71,8 +85,8 @@ public class Mesa {
     /**
      * Mira hacia una dirección y obtiene los n pastores más próximos
      * "entre cuantos vecinos se le cuenten por más próximos hasta un número n"
-     * @param derecha true para mirar a la derecha, false para la izquierda
-     * @param cantidad número de pastores a considerar
+     * derecha true para mirar a la derecha, false para la izquierda
+     * cantidad número de pastores a considerar
      * @return lista de pastores en la dirección especificada
      */
     public List<Pastor> mirarHacia(boolean derecha, int cantidad) {
@@ -133,7 +147,7 @@ public class Mesa {
     /**
      * Encuentra al pastor con menos feligreses entre una lista
      * "señala al más escaso en feligreses"
-     * @param candidatos lista de pastores candidatos
+     * candidatos lista de pastores candidatos
      * @return el pastor con menos feligreses
      */
     public Pastor encontrarMenorGrey(List<Pastor> candidatos) {

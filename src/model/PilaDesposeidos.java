@@ -19,7 +19,7 @@ public class PilaDesposeidos {
     /**
      * Echa un pastor a la pila de desposeídos
      * "enviándolo de cabeza a la pila de los desposeídos"
-     * @param pastor el pastor a echar a la pila
+     * pastor el pastor a echar a la pila
      */
     public void echarAPila(Pastor pastor) {
         if (pastor != null) {
@@ -93,7 +93,7 @@ public class PilaDesposeidos {
     
     /**
      * Busca un pastor específico en la pila
-     * @param id id del pastor a buscar
+     * id id del pastor a buscar
      * @return true si el pastor está en la pila
      */
     public boolean contienePastor(int id) {
@@ -107,7 +107,7 @@ public class PilaDesposeidos {
     
     /**
      * Obtiene la posición de un pastor en la pila (0 = fondo, size-1 = cima)
-     * @param id id del pastor
+     * id id del pastor
      * @return posición del pastor, o -1 si no está
      */
     public int obtenerPosicion(int id) {
@@ -153,7 +153,7 @@ public class PilaDesposeidos {
     /**
      * Restaura un pastor específico de la pila (para casos especiales)
      * NOTA: Solo usar si las reglas del juego lo permiten
-     * @param id id del pastor a restaurar
+     * id id del pastor a restaurar
      * @return el pastor restaurado, o null si no se encontró
      */
     public Pastor restaurarPastorEspecifico(int id) {
@@ -199,7 +199,7 @@ public class PilaDesposeidos {
     
     /**
      * Verifica si la pila tiene capacidad (por si hay límites)
-     * @param maxCapacidad capacidad máxima permitida
+     * maxCapacidad capacidad máxima permitida
      * @return true si puede agregar más pastores
      */
     public boolean tieneCapacidad(int maxCapacidad) {

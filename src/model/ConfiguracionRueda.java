@@ -13,8 +13,8 @@ public class ConfiguracionRueda {
     
     /**
      * Constructor básico con valores por defecto
-     * @param numPastores número de pastores en el juego
-     * @param valorN número de posiciones a contar para eliminación
+     * numPastores número de pastores en el juego
+     * valorN número de posiciones a contar para eliminación
      */
     public ConfiguracionRueda(int numPastores, int valorN) {
         this.numPastores = Math.max(2, Math.min(20, numPastores)); // Entre 2 y 20
@@ -26,11 +26,11 @@ public class ConfiguracionRueda {
     
     /**
      * Constructor completo
-     * @param numPastores número de pastores
-     * @param valorN valor de n para conteo
-     * @param doblonesIniciales doblones base (si no son aleatorios)
-     * @param feligresesIniciales feligreses base (si no son aleatorios)
-     * @param recursosAleatorios si los recursos deben ser aleatorios
+     * numPastores número de pastores
+     * valorN valor de n para conteo
+     * doblonesIniciales doblones base (si no son aleatorios)
+     * feligresesIniciales feligreses base (si no son aleatorios)
+     * recursosAleatorios si los recursos deben ser aleatorios
      */
     public ConfiguracionRueda(int numPastores, int valorN, int doblonesIniciales, 
                              int feligresesIniciales, boolean recursosAleatorios) {

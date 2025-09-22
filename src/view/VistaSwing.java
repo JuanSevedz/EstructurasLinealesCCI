@@ -8,6 +8,13 @@ import java.util.*;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+// Imports de las clases del modelo
+import model.*;
+
+// Imports de las clases de vista
+import view.PanelCircular;
+import view.PanelColumnas;
+
 /**
  * Implementación Swing de la vista del juego
  * "con traza visible y de buen manejo que pinte la mesa por círculos y la pila por columnas"
@@ -33,6 +40,7 @@ public class VistaSwing implements VistaJuego {
     private EstadoRueda estadoActual;
     private CompletableFuture<AccionPastor> futuraAccion;
     private CompletableFuture<Boolean> futuraDireccion;
+    private controlador.ControladorJuego controlador;
     
     // Configuración visual
     private final Color COLOR_MESA = new Color(139, 69, 19); // Marrón
@@ -44,6 +52,14 @@ public class VistaSwing implements VistaJuego {
     
     public VistaSwing() {
         // Constructor vacío, la inicialización se hace en inicializar()
+    }
+    
+    /**
+     * Establece la referencia al controlador
+     * controlador el controlador del juego
+     */
+    public void setControlador(controlador.ControladorJuego controlador) {
+        this.controlador = controlador;
     }
     
     @Override
@@ -196,6 +212,7 @@ public class VistaSwing implements VistaJuego {
         btnArrimarIzquierda.addActionListener(e -> completarAccion(AccionPastor.ARRIMAR_GUADAÑA_IZQUIERDA));
         btnSacarOlvido.addActionListener(e -> completarAccion(AccionPastor.SACAR_DEL_OLVIDO));
         btnMeterMano.addActionListener(e -> completarAccion(AccionPastor.METER_MANO_FALTRIQUERA));
+        btnNuevoJuego.addActionListener(e -> solicitarNuevoJuego());
     }
     
     /**
@@ -204,6 +221,21 @@ public class VistaSwing implements VistaJuego {
     private void completarAccion(AccionPastor accion) {
         if (futuraAccion != null && !futuraAccion.isDone()) {
             futuraAccion.complete(accion);
+        }
+    }
+    
+    /**
+     * Maneja la solicitud de nuevo juego
+     */
+    private void solicitarNuevoJuego() {
+        // Solicitar configuración para el nuevo juego
+        ConfiguracionRueda config = solicitarConfiguracion();
+        if (config != null) {
+            // Notificar al controlador que se solicita un nuevo juego
+            // Esto se puede hacer a través de un callback o método del controlador
+            if (controlador != null) {
+                controlador.reiniciarJuego(config.getNumPastores(), config.getValorN());
+            }
         }
     }
     

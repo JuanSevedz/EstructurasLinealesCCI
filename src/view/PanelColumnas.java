@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
 import java.util.List;
+import model.*;
 
 /**
  * Panel que dibuja la pila de desposeídos en columnas
@@ -39,7 +40,7 @@ public class PanelColumnas extends JPanel {
     
     /**
      * Establece los pastores desposeídos a mostrar
-     * @param desposeidos lista de pastores desposeídos (desde el fondo hasta la cima)
+     * desposeidos lista de pastores desposeídos (desde el fondo hasta la cima)
      */
     public void setDesposeidos(List<Pastor> desposeidos) {
         this.desposeidos = new ArrayList<>(desposeidos);

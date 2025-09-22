@@ -16,8 +16,8 @@ public class JuegoRueda {
     
     /**
      * Constructor del juego
-     * @param numPastores número de pastores iniciales
-     * @param n número de posiciones a contar para eliminación
+     * numPastores número de pastores iniciales
+     * n número de posiciones a contar para eliminación
      */
     public JuegoRueda(int numPastores, int n) {
         this.mesa = new Mesa(numPastores, n);
@@ -68,8 +68,8 @@ public class JuegoRueda {
     
     /**
      * Procesa un turno completo del juego
-     * @param accion la acción que decide tomar el pastor actual
-     * @param derecha true si mira a la derecha, false a la izquierda
+     * accion la acción que decide tomar el pastor actual
+     * derecha true si mira a la derecha, false a la izquierda
      * @return resultado del turno
      */
     public ResultadoTurno tomarTurno(AccionPastor accion, boolean derecha) {
@@ -124,7 +124,7 @@ public class JuegoRueda {
     /**
      * Arrima la guadaña para segar una cabeza
      * "arrimar la guadaña y segar otra cabeza de vecino"
-     * @param derecha dirección a mirar
+     * derecha dirección a mirar
      * @return resultado de la eliminación
      */
     public ResultadoTurno arrimarGuadaña(boolean derecha) {
@@ -336,25 +336,6 @@ public class JuegoRueda {
     }
 }
 
-/**
- * Enumeración de acciones que puede tomar un pastor
- */
-enum AccionPastor {
-    ARRIMAR_GUADAÑA_DERECHA("Arrimar guadaña hacia la derecha"),
-    ARRIMAR_GUADAÑA_IZQUIERDA("Arrimar guadaña hacia la izquierda"), 
-    SACAR_DEL_OLVIDO("Sacar del olvido al postrero"),
-    METER_MANO_FALTRIQUERA("Meter mano en faltriquera del más rico");
-    
-    private final String descripcion;
-    
-    AccionPastor(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    
-    public String getDescripcion() {
-        return descripcion;
-    }
-}
 
 /**
  * Clase para encapsular el resultado de un turno

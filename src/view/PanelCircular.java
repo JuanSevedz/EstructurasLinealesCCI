@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
 import java.util.List;
+import model.*;
 
 /**
  * Panel que dibuja la mesa redonda con los pastores en círculo
@@ -42,8 +43,8 @@ public class PanelCircular extends JPanel {
     
     /**
      * Establece los pastores a mostrar en la mesa
-     * @param pastores lista de pastores
-     * @param posicionActual posición del pastor con turno (-1 si no hay)
+     * pastores lista de pastores
+     * posicionActual posición del pastor con turno (-1 si no hay)
      */
     public void setPastores(List<Pastor> pastores, int posicionActual) {
         this.pastores = new ArrayList<>(pastores);
