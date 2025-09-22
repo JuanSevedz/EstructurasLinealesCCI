@@ -1,9 +1,10 @@
 package app;
 
-import controlador.ControladorJuego;
 import view.VistaSwing;
 
 import javax.swing.SwingUtilities;
+
+import controller.ControladorJuego;
 
 /**
  * Clase Main para iniciar la aplicación Swing del juego.

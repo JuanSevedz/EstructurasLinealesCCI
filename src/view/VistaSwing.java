@@ -40,7 +40,7 @@ public class VistaSwing implements VistaJuego {
     private EstadoRueda estadoActual;
     private CompletableFuture<AccionPastor> futuraAccion;
     private CompletableFuture<Boolean> futuraDireccion;
-    private controlador.ControladorJuego controlador;
+    private controller.ControladorJuego controlador;
     
     // Configuración visual
     private final Color COLOR_MESA = new Color(139, 69, 19); // Marrón
@@ -58,7 +58,7 @@ public class VistaSwing implements VistaJuego {
      * Establece la referencia al controlador
      * controlador el controlador del juego
      */
-    public void setControlador(controlador.ControladorJuego controlador) {
+    public void setControlador(controller.ControladorJuego controlador) {
         this.controlador = controlador;
     }
     

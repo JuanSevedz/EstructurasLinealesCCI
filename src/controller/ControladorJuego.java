@@ -1,4 +1,4 @@
-package controlador;
+package controller;
 
 import model.AccionPastor;
 import model.Mesa;
@@ -26,10 +26,10 @@ public class ControladorJuego {
 
     /**
      * Crea un controlador asociado a una vista. No inicia el juego automáticamente;
-     * llame a {@link #iniciar(int,int)} para crear la mesa y comenzar.
+     * llame a {iniciar(int,int)} para crear la mesa y comenzar.
      *
-     * @param vista vista que implementa la interfaz {@link VistaJuego}
-     * @throws IllegalArgumentException si la vista es null
+     * vista vista que implementa la interfaz {VistaJuego}
+     * IllegalArgumentException si la vista es null
      */
     public ControladorJuego(VistaJuego vista) {
         if (vista == null) {
@@ -42,9 +42,9 @@ public class ControladorJuego {
      * Inicializa la mesa y la pila con los parámetros suministrados y comienza el ciclo
      * principal en un hilo separado para no bloquear la UI.
      *
-     * @param numPastores número de pastores iniciales (>= 2)
-     * @param n           número de vecinos a considerar para degüello (1 <= n < numPastores)
-     * @throws IllegalArgumentException si los parámetros no cumplen condiciones
+     * numPastores número de pastores iniciales (>= 2)
+     * n           número de vecinos a considerar para degüello (1 <= n < numPastores)
+     * IllegalArgumentException si los parámetros no cumplen condiciones
      */
     public void iniciar(int numPastores, int n) {
         if (numPastores < 2) {
