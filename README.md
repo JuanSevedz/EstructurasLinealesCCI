@@ -17,10 +17,6 @@
 
 ## Informe
 
-[Ver el informe completo (PDF)](docs/)
+[Ver el informe completo (PDF)](docs/InformeTaller2.pdf)
 
 ***
-
-## Documentación código
-
-[Ver el informe completo (PDF)](src/)
